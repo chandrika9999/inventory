@@ -85,6 +85,7 @@ class InventoryManagementSystem {
                 .add(item);
 
         checkRestocking(item);
+        System.out.println("Item added successfully: " + item);
     }
 
     public void removeItemById(String id) {
@@ -94,7 +95,7 @@ class InventoryManagementSystem {
             if (categoryQueue != null) {
                 categoryQueue.remove(item);
             }
-            System.out.println("Item " + item.getName() + " with ID " + item.getId() + " removed.");
+            System.out.println("Item removed successfully: " + item);
         } else {
             System.out.println("Item with ID " + id + " not found.");
         }
@@ -192,7 +193,7 @@ class InventoryManagementSystem {
                 case 5:
                     System.out.println("Merge with another inventory.");
                     InventoryManagementSystem anotherIMS = new InventoryManagementSystem(10);
-                    anotherIMS.addOrUpdateItem("New Item", "electronics", 50);
+                    anotherIMS.addOrUpdateItem("New Item", "Electronics", 50);
                     ims.mergeInventories(anotherIMS);
                     break;
                 case 6:
